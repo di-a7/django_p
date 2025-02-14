@@ -1,0 +1,25 @@
+# Django and Django Restframework
+Django: It is a python web framework
+
+Website: Frontend(can be seen by the users) and 
+backend(cannot be seen by users, it store and control data)
+
+-Frontend development, developer and 
+Backend development, developer, Fullstack developer
+
+- Django framework - It build both, Fullstack framework
+
+- Django is a battery included framework
+
+- follows MVT architecture (Models, Views and Templates)
+Models - data related works, data store euta structure
+Views - User interface, templates render, models ma vako data sunga interact garni (Logics)
+Templates - static html pages
+
+Todolist:
+title = character field
+description = Text field
+is_completed = boolean field
+
+
+view all data
