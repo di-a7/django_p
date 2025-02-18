@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}TodoLists{% endblock title %}
+
+{% block body %}
+<div class="container">
+   <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in tasks %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{task.title}}</td>
+          <td>{{task.description}}</td>
+          <td>
+          {% if task.is_completed %}
+          <span class="text-success">
+            Completed
+          </span>
+          {% else %}
+          <span class="text-danger">
+            Pending
+          </span>
+          {% endif %}
+          <!-- {{task.is_completed}} -->
+          
+          </td>
+          <td>
+            <a href="{{task.pk}}/" class ="btn btn-success">Mark</a>
+            <a href="{{task.pk}}/edit" class ="btn btn-primary">Edit</a>
+            <!-- <a class ="btn btn-success">Mark</button> -->
+          </td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+</div>
+{% endblock body %}

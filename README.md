@@ -13,6 +13,9 @@ source env\Scripts\activate
 <!-- install django -->
 pip install django
 
+<!-- freeze the packages -->
+pip install -r requirements.txt
+
 <!-- create django project -->
 django-admin startproject project_name .  ['.' is optional]
 
