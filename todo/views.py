@@ -41,8 +41,14 @@ def contact(request):
 
 def task(request):
    tasks = Todolist.objects.all()
+   total = tasks.count()
+   completed = Todolist.objects.filter(is_completed = True).count()
+   notcompleted = Todolist.objects.filter(is_completed = False).count()
    context = {
-      "tasks":tasks
+      "tasks":tasks,
+      "total":total,
+      "completed":completed,
+      "notcompleted":notcompleted
    }
    return render(request, 'task.html',context)
 
@@ -81,5 +87,4 @@ def edit_task(request,pk):
       task.description = descriptions
       task.save()
       return redirect("/task")
-      
    return render(request, 'edit.html',context)
